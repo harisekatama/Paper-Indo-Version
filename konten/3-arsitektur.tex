@@ -4,65 +4,27 @@
 
 % Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan.
 
-\subsection{Cetak Biru Roket}
-\label{subsec:cetakbiruroket}
+\subsection{Skematik Alat}
+\label{subsec:skematik alat}
 
-Pada cetak biru yang tertera pada Gambar \ref{fig:cetakbiru}. \lipsum[8]
+Skematik pada alat ini diilustrasikan secara rinci pada Gambar \ref{fig:Skematik Alat}. Sistem ini menggunakan kamera yang dihubungkan dengan Laptop atau Jetson Nano sebagai perangkat utama dalam menangkap citra. Proses kerja dimulai saat kamera menangkap citra objek. Citra yang telah ditangkap ini lantas diproses oleh Laptop atau Jetson Nano. Di dalam sistem ini, model klasifikasi yang telah diprogram sebelumnya memainkan peran penting dalam menginterpretasikan data citra tersebut. Hasil dari proses klasifikasi ini sangat krusial karena menjadi dasar dalam penentuan kode instruksi yang akan diimplementasikan.
 
-% Contoh input gambar pada kolom.
-\begin{figure} [ht]
-  \centering
-  % Ubah sesuai dengan nama file gambar dan ukuran yang akan digunakan.
-  \includegraphics[width=0.4\textwidth]{gambar/cetakbiru.jpg}
+Kode instruksi tersebut kemudian akan dikombinasikan dengan parameter kecepatam maksimal yang sebelumnya telah ditetapkan oleh pemngguna. Gabungan dari kode instruksi dan parameter kecepatan ini akan menjadi satu paket data sebagai kontrol gerak kursi roda. Paket data ini kemudian akan ditransmisikan secara nirkabel, baik dengan Bluetooth maupun WiFi, ke modul ESP32 Devkit V1. 
 
-  % Ubah sesuai dengan keterangan gambar yang diinginkan.
-  \caption{Cetak biru roket yang akan diuji coba. \cite{cetakbiruspacex}}
-  \label{fig:cetakbiru}
+ESP32 memiliki peranan penting dalam kontrol motor kursi roda. ESP32 akan digunakan sebagai pusat pengendalian yang menerima paket data yang telah dikirimkan oleh pengguna secara nirkabel. Kemudian ESP32 akan melakukan pemecahan paket data dan menyesuaikan data tersebut kedalam variabel-variabel yang telah ditentukan. Proses pemecahan paket data ini akan menghasilkan dua data utama yang kemudian akan diproses lebih lanjut oleh ESP32.
+
+Variabel pertama merupakan variabel arah yang memiliki fungsi krusial untuk menentukan arah gerak kedua motor pada kursi roda. Variabel ini akan memastikan bahwa motor bergerak sesuai dengan arah yang diinginkan sesuai dengan data yang diterima. Selain itu terdapat variabel kecepatan yang digunakan untuk menetapkan kecepatan maksimal pergerakan motor.
+
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.24]{gambar/bab3/Schematics.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Skematik kontrol motor kursi roda}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:Skematik Alat}
 \end{figure}
 
-\lipsum[9-10]
+Dalam implementasinya terdapat serangkaian logika \emph{if} berantai yang akan dijelaskan secara terperinci pada sub bab program. Sederhananya logika \emph{if} berantai ini memiliki peran yang penting dalam pengambilan keputusan baik arah dan kecepatan motor sesuai dengan data yang telah diterima. Hasil dari logika ini akan memberikan \emph{trigger} berupa tegangan 5V ataupun 0V. Tegangan ini kemudian akan mempengaruhi arah putar motor.
 
-\subsection{Lorem Ipsum}
-\label{subsec:loremipsum}
+Selanjutnya variabel kecepatan akan digunakan untuk mengatur tingkat \emph{Pulse Width Modulation} pada kontroler motor. Pengaturan PWM ini sangatlah penting guna mengatur kecepatan putar motor. Dengan mengatur tingkat PWM maka kecepatan motor maksimal dapat disesuaikan sesuai dengan kebutuhan.
 
-\lipsum[11]
-
-% Contoh pembuatan tabel.
-\begin{table}
-  \caption{Contoh tabel sederhana}
-  \label{tab:tabelsederhana}
-  \centering
-  \begin{tabular}{lll}
-    \toprule
-    Heading1 & Heading2 & Heading3  \\
-    \midrule
-    One      & Two      & Three     \\
-    Four     & Five     & Six       \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-% Contoh pembuatan potongan kode.
-\begin{lstlisting}[
-  language=C++,
-  caption={Program halo dunia.},
-  label={lst:halodunia}
-]
-#include <iostream>
-
-int main() {
-    std::cout << "Halo Dunia!";
-    return 0;
-}
-\end{lstlisting}
-
-\lipsum[12]
-
-% Contoh pembuatan daftar.
-\begin{enumerate}
-  \item \lipsum[13][1-4]
-  \item \lipsum[13][5-8]
-  \item \lipsum[13][9-12]
-\end{enumerate}
-
-\lipsum[14-15]
