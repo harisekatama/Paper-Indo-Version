@@ -24,7 +24,7 @@ Deteksi pose merupakan suatu proses yang melibatkan penggunaan bahasa pemrograma
 Pada penelitian kali ini akan memanfaatkan teknologi \emph{hand pose} dari Mediapipe untuk mengontrol gerak kursi roda. Terdapat beberapa titik \emph{keypoints} yang akan digunakan pada estimasi pose ini. Titik \emph{keypoints} yang akan digunakan pada estimasi  pose ini dapat dilihat pada Tabel \ref{tbl:titik keypoints}.
 
 \begin{table}[h]
-  \caption{Tabel Titik Keypoints Yang Relevan Pada Estimasi Pose\cite{Developer_2023z}}
+  \caption{Tabel Titik Keypoints Yang Relevan Pada Estimasi Pose\cite{Developer_2023}}
   \label{tbl:titik keypoints}
   \centering
   \begin{tabular}{|c|c|}
@@ -134,18 +134,18 @@ Variabel arah memiliki tipe data \emph{char} yang akan menentukan gerak dari mot
 
 % Tabel 3.2
 \begin{table}[h]
-\centering
-    \caption{Kode instruksi dari hasil klasifikasi}
-    \label{tbl:kode-instruksi}
-    \begin{tabular}{|c|c|}
-        \hline
-        Klasifikasi Pose & Kode Instruksi \\ \hline
-        Kiri             & A              \\ \hline
-        Maju             & B              \\ \hline
-        Stop             & C              \\ \hline
-        Mundur           & D              \\ \hline
-        Kanan            & E              \\ \hline
-    \end{tabular}
+  \centering
+      \caption{Kode instruksi dari hasil klasifikasi}
+      \label{tbl:kode-instruksi}
+      \begin{tabular}{|c|c|}
+          \hline
+          Klasifikasi Pose & Kode Instruksi \\ \hline
+          Kiri             & A              \\ \hline
+          Maju             & B              \\ \hline
+          Stop             & C              \\ \hline
+          Mundur           & D              \\ \hline
+          Kanan            & E              \\ \hline
+      \end{tabular}
 \end{table}
 
 Setelah kedua variabel tersebut digabungkan maka akan dikirim secara nirkabel, baik menggunakan Bluetooth maupun WiFi dari laptop atau Jetson Nano ke ESP32.

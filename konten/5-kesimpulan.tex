@@ -3,5 +3,35 @@
 \label{sec:kesimpulan}
 
 % Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan.
+Berdasarkan hasil pengujian yang dilakukan selama pelaksanaan tugas akhir ini adalah sebagai berikut:
 
-\lipsum[21-23]
+\begin{enumerate}[nolistsep]
+
+  \item Waktu \emph{delay} rata-rata terendah terdapat pada pengujian dengan mengirimkan string dengan 1 nilai dan ditransmisikan melalui WiFi. Waktu \emph{delay} rata-ratanya adalah sebesar 0,03499708571 detik.
+
+  \item Waktu \emph{delay} rata-rata tertinggi terdapat pada pengujian dengan mengirimkan string dengan 2 nilai dan ditransmisikan melalui WiFi. Waktu \emph{delay} rata-ratanya adalah sebesar 1,059681387 detik.
+  
+  \item Waktu \emph{delay} tambahan pada program pengirim data diperlukan untuk beberapa pengujian. Hal ini diakibatkan agar tidak terjadi penumpukan (\emph{flooding}) data yang dapat mengganggu kinerja dari ESP32.
+
+  \item Terdapat beberapa pengujian yang memerlukan waktu \emph{delay} tambahan pada program pengirim data seperti pada pengiriman data String berisi 2 nilai melalui Bluetooth yang memerlukan waktu \emph{delay} tambahan sebesar 1,5 detik, pengiriman data JSON dengan 2 nilai melalui Bluetooth yang memerlukan waktu \emph{delay} tambahan sebesar 1,1 detik, pengiriman data String berisi 2 nilai melalui WiFi yang memerlukan waktu \emph{delay} tambahan sebesar 1,3 detik, pengiriman data JSON yang berisi 2 nilai melalui WiFi yang memerlukan waktu \emph{delay} tambahan sebesar 1,5 detik, pengiriman data JSON yang berisi 1 nilai melalui Bluetooth yang memerlukan waktu \emph{delay} tambahan sebesar 1 detik, pengiriman data JSON yang berisi 1 nilai melalui WiFi yang memerlukan waktu \emph{delay} tambahan sebesar 1,5 detik.
+  
+  \item Hanya 2 pengujian yang tidak memerlukan waktu \emph{delay} tambahan pada program pengirim data, yaitu pada pengiriman data String yang berisi 1 nilai melalui Bluetooth dan pengiriman data String yang berisi 1 nilai melalui WiFi. 
+  
+  \item Data yang ditransmisikan untuk mengontrol kursi roda melalui visi komputer lebih baik menggunakan String yang hanya berisi 1 nilai, yaitu variabel arah yang dianalogikan dengan 1 karakter huruf. 
+  
+  \item Transmisi data yang digunakan untuk mengontrol kursi roda melalui visi komputer lebih baik menggunakan WiFi dengan ESP32 sebagai \emph{Access Point}-nya.
+
+\end{enumerate}
+
+\section{Saran}
+\label{chap:saran}
+
+Berdasarkan hasil yang diperoleh dari penelitian ini maka saran yang dapat dipertimbangkan untuk pengembangan lebih lanjut adalah sebagai berikut:
+
+\begin{enumerate}
+
+  \item Kecepatan putar motor diatur melalui ESP32 dengan menggunakan \emph{button} ataupun potensiometer.
+
+  \item Mencoba menggunakan gestur lain untuk mengontrol gerak kursi roda.
+
+\end{enumerate}
